@@ -6,7 +6,41 @@ Redirect users to mobile-friendly site on mobile devices. Also provide a way for
 ## Usage
 On PC site, include this script in top page's `<head>` will redirect users on mobile device to a sub folder called `m` when visiting the URL http://example.com/.
 `http://example.com/` will be redirected to `http://example.com/m`
+
+
+
+## Version 2.0.0
+### Features
+    - Supports what version 1.0.0 does, purely in JavaScript. No PHP is required.
+    - Supports hashed URL, for single page application like AngularJS, Backbone, etc. modern framework.
+
+### Requirement
+    - PHP
+    - JavaScript
+
+### Usage
+```html
+<head>
+    <script type="text/javascript" src="/path/to/mdetection.js"></script>
+    <script>
+        new MDetection()
+    </script>
+</head>
 ```
+
+
+
+## Version 1.0.0
+### Features
+    - Supports no redirection with origin URL.
+    - Cookie remembers user settings.
+    - Redirect back and forth to mobile / PC site.
+    - Single inclusion
+### Requirement
+    - PHP
+    - JavaScript
+### Usage
+```html
 <head>
     <script type="text/javascript" src="/path/to/mdetection.js.php?moburl=m"></script>
 </head>
