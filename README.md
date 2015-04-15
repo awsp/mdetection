@@ -15,7 +15,6 @@ On PC site, include this script in top page's `<head>` will redirect users on mo
     - Supports hashed URL, for single page application like AngularJS, Backbone, etc. modern framework.
 
 ### Requirement
-    - PHP
     - JavaScript
 
 ### Usage
@@ -23,7 +22,7 @@ On PC site, include this script in top page's `<head>` will redirect users on mo
 <head>
     <script type="text/javascript" src="/path/to/mdetection.js"></script>
     <script>
-        new MDetection()
+        new MDetection('path/to/redirect').exec();
     </script>
 </head>
 ```
