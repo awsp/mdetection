@@ -29,7 +29,7 @@ On PC site, include this script in top page's `<head>` will redirect users on mo
 
 
 
-## Version 1.0.0
+## Version 1.0.1
 ### Features
     - Supports no redirection with origin URL.
     - Cookie remembers user settings.
@@ -59,8 +59,8 @@ To let users back again to the mobile version after they change the mind from go
 ```
 
 
-## Bug Report
-https://github.com/awsp/mdetection
+## Bug Reporting
+https://github.com/awsp/mdetection/issues
 
 
 
