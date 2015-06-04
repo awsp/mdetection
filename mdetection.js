@@ -4,7 +4,7 @@
  * Usage:
  *    new MDetection().exec(); // Redirect to `m/` folder
  *
- * @version  2.0
+ * @version  2.0.1
  * @author  Anthony S. Wu <anthonyspwu@gmail.com>
  */
 
@@ -28,14 +28,8 @@
       this.setCookie("redflag", true, this.expireInDays);
     }
     else {
-      if (this.getCookie("redflag") !== undefined) {
-        this.redirectFlag = this.getCookie("redflag");
-        if(typeof(this.redirectFlag) == "string") {
-          if(this.redirectFlag == "true")
-            this.redirectFlag = true;
-          else
-            this.redirectFlag = false;
-        }
+      if (typeof this.getCookie("redflag") === "undefined") {
+        this.redirectFlag = JSON.parse(this.getCookie("redflag"));
       }
       else {
         this.redirectFlag = true;
@@ -45,26 +39,14 @@
 
 
     if (this.redirectFlag) {
-
-      if (navigator.userAgent.match("ipad") === null && (navigator.appVersion.indexOf("android") >= 0 || navigator.userAgent.match("iphone") !== null || navigator.appVersion.indexOf("nokia") >= 0 || navigator.userAgent.match("ipod") !== null)) {
-
-        if (this.redirectURL === undefined || this.redirectURL === "") {
-          document.location.replace("m/");
-        }
-        else {
-          document.location.replace(this.redirectURL);
-        }
-      }
-      else if (navigator.userAgent.match("ipad") === null && screen.width <= 800) {
-        if(this.redirectURL === undefined || this.redirectURL === "") {
-          document.location.replace("m/");
-        }
-        else {
-          document.location.replace(this.redirectURL);
-        }
-      }
-
+      // Redirect flag has stronger effect.
+      document.location.replace(this.redirectURL);
     }
+    else if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || Math.min(window.screen.width, window.screen.height) < 500) {
+      // Redirect when it is mobile browser or screen size is less than 500
+      document.location.replace(this.redirectURL);
+    }
+
   };
 
   MDetection.prototype.getCookie = function (cookieName) {

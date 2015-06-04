@@ -9,7 +9,7 @@ On PC site, include this script in top page's `<head>` will redirect users on mo
 
 
 
-## Version 2.0.0
+## Version 2.0.1
 ### Features
     - Supports what version 1.0.0 does, purely in JavaScript. No PHP is required.
     - Supports hashed URL, for single page application like AngularJS, Backbone, etc. modern framework.
